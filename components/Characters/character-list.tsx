@@ -1,4 +1,5 @@
 import { View } from 'tamagui';
+
 import CharacterCard from './character-card';
 export default function CharacterList() {
   return (
