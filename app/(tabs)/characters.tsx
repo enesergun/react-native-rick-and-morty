@@ -2,16 +2,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { YStack, H2, Input, Theme, Image, Text, View, XGroup, ScrollView } from 'tamagui';
 
 import CharacterCard from '~/components/Characters/character-card';
-
-function CharacterList() {
-  return (
-    <View flexDirection="row" flexWrap="wrap" gap="10">
-      <CharacterCard />
-      <CharacterCard />
-      <CharacterCard />
-    </View>
-  );
-}
+import CharacterList from '~/components/Characters/character-list';
 
 export default function TabCharactersScreen() {
   const { left, top, right } = useSafeAreaInsets();
