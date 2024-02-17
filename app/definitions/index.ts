@@ -12,6 +12,7 @@ export interface CharacterImageProps {
   image: string;
 }
 export interface LocationCardProps {
+  color: string;
   infoText: string;
   locationName: string;
   link: any;

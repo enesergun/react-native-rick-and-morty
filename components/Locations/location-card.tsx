@@ -9,15 +9,16 @@ export default function LocationCard({
   locationName,
   link,
   image,
+  color,
 }: Readonly<LocationCardProps>) {
   const windowWidth = Dimensions.get('window').width;
   return (
     <Card backgroundColor="#fff" marginTop={20} marginBottom={40} width={windowWidth - 20} elevate>
       <Card.Header padded>
-        <Paragraph theme="alt2" color="#11b0c8">
+        <Paragraph theme="alt2" color={color}>
           {infoText}
         </Paragraph>
-        <H3 color="#11b0c8">{locationName}</H3>
+        <H3 color={color}>{locationName}</H3>
       </Card.Header>
       <Card.Footer padded>
         <XStack flex={1} />

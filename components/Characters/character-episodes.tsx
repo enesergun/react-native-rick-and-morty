@@ -10,26 +10,30 @@ export default function CharacterEpisodes() {
         <LocationCard
           infoText="Episode"
           locationName="Episode 1"
-          image={require('../../assets/planet.webp')}
+          image={require('../../assets/mock.webp')}
           link="/location/2"
+          color="#fff"
         />
         <LocationCard
           infoText="Episode"
           locationName="Episode 1"
-          image={require('../../assets/planet.webp')}
+          image={require('../../assets/mock.webp')}
           link="/location/2"
+          color="#fff"
         />
         <LocationCard
           infoText="Episode"
           locationName="Episode 1"
-          image={require('../../assets/planet.webp')}
+          image={require('../../assets/mock.webp')}
           link="/location/2"
+          color="#fff"
         />
         <LocationCard
           infoText="Episode"
           locationName="Episode 1"
-          image={require('../../assets/planet.webp')}
+          image={require('../../assets/mock.webp')}
           link="/location/2"
+          color="#fff"
         />
       </XStack>
     </ScrollView>

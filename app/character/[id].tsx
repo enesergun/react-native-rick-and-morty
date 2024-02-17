@@ -1,3 +1,4 @@
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, useLocalSearchParams } from 'expo-router';
 import React from 'react';
 import { StyleSheet } from 'react-native';
@@ -17,7 +18,7 @@ export default function CharacterDetail() {
     <ScrollView theme="light">
       <YStack top={top} left={left} right={right} flex={1} padding={10}>
         <Link style={styles.linkStyle} href="/characters">
-          {'<'}
+          <FontAwesome size={28} name="chevron-left" />
         </Link>
 
         <CharacterImage image={require('../../assets/1.webp')} />
@@ -35,6 +36,7 @@ export default function CharacterDetail() {
           locationName="Earth"
           image={require('../../assets/planet.webp')}
           link="/location/2"
+          color="#11b0c8"
         />
       </YStack>
       <CharacterEpisodes />
@@ -45,5 +47,6 @@ const styles = StyleSheet.create({
   linkStyle: {
     fontSize: 20,
     color: '#11b0c8',
+    marginLeft: 15,
   },
 });
