@@ -17,6 +17,7 @@ export default function TabLayout() {
         headerShown: false,
         tabBarStyle: { height: 75 },
         tabBarShowLabel: false,
+        tabBarHideOnKeyboard: true,
       }}>
       <Tabs.Screen
         name="characters"

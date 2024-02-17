@@ -1,7 +1,7 @@
 import { Image, Text, View } from 'tamagui';
 export default function CharacterCard() {
   return (
-    <View padding={15} borderRadius={20} borderStyle="solid" borderWidth="1" width="48%">
+    <View padding={15} borderRadius={20} borderStyle="solid" borderWidth={1} width="48%">
       <Image
         borderRadius={20}
         source={{
