@@ -1,9 +1,10 @@
 import { useLocalSearchParams } from 'expo-router';
 import React from 'react';
 
-import CharacterDetail from '~/components/Characters';
+import EpisodeDetail from '~/components/Episodes';
+
 export default function Detail() {
   const { id } = useLocalSearchParams();
 
-  return <CharacterDetail />;
+  return <EpisodeDetail />;
 }

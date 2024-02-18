@@ -11,7 +11,7 @@ export default function TabCharactersScreen() {
     <Theme name="light">
       <YStack top={top} left={left} right={right} flex={1} padding={10}>
         <Title text="Characters" color="#11b0c8" margin={0} />
-        <ScrollView>
+        <ScrollView marginBottom={60}>
           <Input size="$4" placeholder="Search Character..." marginTop={10} marginBottom={30} />
           <CharacterList />
         </ScrollView>

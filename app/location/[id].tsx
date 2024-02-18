@@ -1,12 +1,10 @@
+import { useLocalSearchParams } from 'expo-router';
 import React from 'react';
-import { View, Text } from 'react-native';
 
-const LocationDetail = () => {
-  return (
-    <View>
-      <Text>LocationDetail</Text>
-    </View>
-  );
-};
+import LocationDetail from '~/components/Locations';
 
-export default LocationDetail;
+export default function Detail() {
+  const { id } = useLocalSearchParams();
+
+  return <LocationDetail />;
+}

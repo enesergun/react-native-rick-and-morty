@@ -40,13 +40,13 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <TabBarIcon name="tv" color={color} />,
         }}
       />
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="favorites"
         options={{
           title: 'Favorites',
           tabBarIcon: ({ color }) => <TabBarIcon name="heart-o" color={color} />,
         }}
-      />
+      /> */}
     </Tabs>
   );
 }
