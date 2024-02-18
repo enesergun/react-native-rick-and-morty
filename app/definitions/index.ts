@@ -18,3 +18,6 @@ export interface LocationCardProps {
   link: any;
   image?: any;
 }
+export interface FilterProps {
+  placeholder: string;
+}
