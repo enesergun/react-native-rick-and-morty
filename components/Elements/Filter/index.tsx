@@ -1,10 +1,12 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useLocalSearchParams, router } from 'expo-router';
 import React, { useState } from 'react';
 import { Input, Button, View, Sheet, Text, ScrollView, XStack } from 'tamagui';
 
 import { FilterProps } from '~/app/definitions';
 
 function FilterGroup() {
+  const [active, setActive] = useState('');
   return (
     <View padding={15}>
       <Text marginBottom={10}>Status</Text>
@@ -14,23 +16,37 @@ function FilterGroup() {
             borderWidth={1}
             borderColor="#d1d5db"
             borderRadius={15}
-            backgroundColor="transparent">
+            backgroundColor={active === 'alive' ? '#11b0c8' : 'transparent'}
+            color={active === 'alive' ? '#fff' : '#000'}
+            onPress={() => {
+              setActive('alive');
+              router.setParams({ status: 'Alive' });
+            }}>
             Alive
           </Button>
           <Button
             borderWidth={1}
             borderColor="#d1d5db"
             borderRadius={15}
-            backgroundColor="#11b0c8"
-            color="#fff">
-            Alive
+            backgroundColor={active === 'dead' ? '#11b0c8' : 'transparent'}
+            color={active === 'dead' ? '#fff' : '#000'}
+            onPress={() => {
+              setActive('dead');
+              router.setParams({ status: 'dead' });
+            }}>
+            Dead
           </Button>
           <Button
             borderWidth={1}
             borderColor="#d1d5db"
             borderRadius={15}
-            backgroundColor="transparent">
-            Alive
+            backgroundColor={active === 'unknown' ? '#11b0c8' : 'transparent'}
+            color={active === 'unknown' ? '#fff' : '#000'}
+            onPress={() => {
+              setActive('unknown');
+              router.setParams({ status: 'unknown' });
+            }}>
+            Unknown
           </Button>
         </XStack>
       </ScrollView>
@@ -46,7 +62,14 @@ export default function Filter({ placeholder }: Readonly<FilterProps>) {
 
   return (
     <View flexDirection="row" alignItems="center" marginTop={10} marginBottom={30} gap={6}>
-      <Input size="$4" placeholder={placeholder} width="80%" />
+      <Input
+        size="$4"
+        placeholder={placeholder}
+        width="80%"
+        onChangeText={(search) => {
+          router.setParams({ q: search });
+        }}
+      />
       <Button
         onPress={() => setOpen(true)}
         borderColor="#d1d5db"
@@ -70,7 +93,7 @@ export default function Filter({ placeholder }: Readonly<FilterProps>) {
         <Sheet.Frame padding={20}>
           <FilterGroup />
           <FilterGroup />
-          <Button backgroundColor="#11b0c8" color="#fff">
+          <Button backgroundColor="#11b0c8" color="#fff" onPress={() => setOpen(false)}>
             Apply Filter
           </Button>
         </Sheet.Frame>

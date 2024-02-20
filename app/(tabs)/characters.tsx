@@ -1,12 +1,15 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { YStack, Input, Theme, ScrollView, Button, View } from 'tamagui';
+import { YStack, Theme, ScrollView } from 'tamagui';
 
 import CharacterList from '~/components/Characters/character-list';
 import Filter from '~/components/Elements/Filter';
 import Title from '~/components/Elements/Title';
 export default function TabCharactersScreen() {
+  const params = useLocalSearchParams<{ q?: string; status?: string }>();
   const { left, top, right } = useSafeAreaInsets();
+
+  console.log('params', params);
 
   return (
     <Theme name="light">
