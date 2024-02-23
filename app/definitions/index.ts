@@ -1,4 +1,5 @@
 export interface TitleProps {
+  style?: any;
   margin: number;
   text: string;
   color: string;

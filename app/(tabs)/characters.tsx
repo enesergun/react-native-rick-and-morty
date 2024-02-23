@@ -9,8 +9,6 @@ export default function TabCharactersScreen() {
   const params = useLocalSearchParams<{ q?: string; status?: string }>();
   const { left, top, right } = useSafeAreaInsets();
 
-  console.log('params', params);
-
   return (
     <Theme name="light">
       <YStack top={top} left={left} right={right} flex={1} padding={10}>
