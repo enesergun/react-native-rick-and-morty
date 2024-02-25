@@ -13,7 +13,7 @@ export default function DynamicHeader({
   back,
 }: Readonly<DynamicHeaderProps>) {
   const Header_Max_Height = image ? 345 : 100;
-  const Header_Min_Height = 50;
+  const Header_Min_Height = 55;
   const animateHeaderBackgroundColor = animHeaderValue.interpolate({
     inputRange: [0, Header_Max_Height - Header_Min_Height],
     outputRange: ['transparent', '#11b0c8'],
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   header: {
     left: 0,
     right: 0,
-
+    padding: 0,
     overflow: 'hidden',
   },
   linkStyle: {
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     color: '#11b0c8',
     position: 'relative',
     left: 10,
-    top: 10,
+    top: 15,
     zIndex: 1,
   },
   image: {

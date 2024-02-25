@@ -41,7 +41,6 @@ export default function EpisodeDetail() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 10,
     margin: 0,
   },
   linkStyle: {

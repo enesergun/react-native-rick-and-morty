@@ -12,7 +12,15 @@ export default function Title({
   if (style) {
     return (
       <Animated.Text
-        style={[{ margin, fontSize: 30, textAlign: 'center', position: 'relative' }, style]}>
+        style={[
+          {
+            margin,
+            fontSize: 30,
+            textAlign: 'center',
+            position: 'relative',
+          },
+          style,
+        ]}>
         {text}
       </Animated.Text>
     );
