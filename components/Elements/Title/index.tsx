@@ -1,5 +1,6 @@
-import { H2 } from 'tamagui';
 import { Animated, Text, StyleSheet } from 'react-native';
+import { H2 } from 'tamagui';
+
 import { TitleProps } from '~/app/definitions';
 export default function Title({
   style,

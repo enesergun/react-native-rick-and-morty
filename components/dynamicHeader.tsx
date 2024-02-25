@@ -1,16 +1,19 @@
-import { StyleSheet, Animated, Text } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link } from 'expo-router';
 import React from 'react';
+import { StyleSheet, Animated } from 'react-native';
 
-import CharacterImage from '~/components/Characters/character-image';
-
+import { DynamicHeaderProps } from '~/app/definitions';
 import Title from '~/components/Elements/Title';
 
-const Header_Max_Height = 345;
-const Header_Min_Height = 50;
-
-export default function DynamicHeader({ animHeaderValue }: { animHeaderValue: any }) {
+export default function DynamicHeader({
+  animHeaderValue,
+  image,
+  title,
+  back,
+}: Readonly<DynamicHeaderProps>) {
+  const Header_Max_Height = image ? 345 : 100;
+  const Header_Min_Height = 50;
   const animateHeaderBackgroundColor = animHeaderValue.interpolate({
     inputRange: [0, Header_Max_Height - Header_Min_Height],
     outputRange: ['transparent', '#11b0c8'],
@@ -48,19 +51,20 @@ export default function DynamicHeader({ animHeaderValue }: { animHeaderValue: an
         },
       ]}>
       <Animated.Text style={[styles.linkStyle, { color: animatedTextColor }]}>
-        <Link href="/characters">
+        <Link href={back}>
           <FontAwesome size={28} name="chevron-left" />
         </Link>
       </Animated.Text>
-      <Animated.Image
-        source={require('../assets/1.webp')}
-        style={[styles.image, { height: animateImageHeight }]}
-      />
-      {/* <CharacterImage image={require('../assets/1.webp')} /> */}
+      {image && (
+        <Animated.Image
+          source={require('../assets/1.webp')}
+          style={[styles.image, { height: animateImageHeight }]}
+        />
+      )}
       <Title
         style={{ color: animatedTextColor, bottom: animatedHeaderBottom }}
         margin={10}
-        text="Rick Sanchez"
+        text={title}
         color="#11b0c8"
         centered
       />
@@ -81,6 +85,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     left: 10,
     top: 10,
+    zIndex: 1,
   },
   image: {
     alignSelf: 'center',

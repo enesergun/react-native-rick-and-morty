@@ -1,3 +1,5 @@
+import { Animated } from 'react-native';
+
 export interface TitleProps {
   style?: any;
   margin: number;
@@ -21,4 +23,10 @@ export interface LocationCardProps {
 }
 export interface FilterProps {
   placeholder: string;
+}
+export interface DynamicHeaderProps {
+  animHeaderValue: Animated.Value;
+  image?: string | NodeRequire;
+  title: string;
+  back: any;
 }
