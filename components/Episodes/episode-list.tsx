@@ -5,7 +5,7 @@ import { View } from 'tamagui';
 import EpisodeCard from './episode-card';
 export default function EpisodeList() {
   return (
-    <View flexDirection="row" flexWrap="wrap" gap={8}>
+    <View flexDirection="row" flexWrap="wrap" gap={8} marginBottom={60}>
       <Link href="/episode/1" style={styles.linkStyle}>
         <EpisodeCard />
       </Link>

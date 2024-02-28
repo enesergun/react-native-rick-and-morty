@@ -6,7 +6,7 @@ import LocationListCard from './location-list-card';
 
 export default function CharacterList() {
   return (
-    <View flexDirection="row" flexWrap="wrap" gap={8}>
+    <View flexDirection="row" flexWrap="wrap" gap={8} marginBottom={60}>
       <Link href="/location/1" style={styles.linkStyle}>
         <LocationListCard />
       </Link>

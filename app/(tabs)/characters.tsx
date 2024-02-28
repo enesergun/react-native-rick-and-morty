@@ -11,9 +11,9 @@ export default function TabCharactersScreen() {
 
   return (
     <Theme name="light">
-      <YStack top={top} left={left} right={right} flex={1} padding={10}>
+      <YStack top={top} left={left} right={right} flex={1} paddingHorizontal={10}>
         <Title text="Characters" color="#11b0c8" margin={0} />
-        <ScrollView marginBottom={60}>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <Filter placeholder="Search Character..." />
 
           <CharacterList />

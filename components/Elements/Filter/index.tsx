@@ -1,6 +1,6 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { useLocalSearchParams, router } from 'expo-router';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Input, Button, View, Sheet, Text, ScrollView, XStack } from 'tamagui';
 
 import { FilterProps } from '~/app/definitions';
@@ -19,8 +19,8 @@ function FilterGroup() {
             backgroundColor={active === 'alive' ? '#11b0c8' : 'transparent'}
             color={active === 'alive' ? '#fff' : '#000'}
             onPress={() => {
-              setActive('alive');
-              router.setParams({ status: 'Alive' });
+              setActive((prevState) => (prevState === 'alive' ? '' : 'alive'));
+              router.setParams({ status: active === 'alive' ? '' : 'alive' });
             }}>
             Alive
           </Button>
@@ -31,8 +31,8 @@ function FilterGroup() {
             backgroundColor={active === 'dead' ? '#11b0c8' : 'transparent'}
             color={active === 'dead' ? '#fff' : '#000'}
             onPress={() => {
-              setActive('dead');
-              router.setParams({ status: 'dead' });
+              setActive((prevState) => (prevState === 'dead' ? '' : 'dead'));
+              router.setParams({ status: active === 'dead' ? '' : 'dead' });
             }}>
             Dead
           </Button>
@@ -43,8 +43,8 @@ function FilterGroup() {
             backgroundColor={active === 'unknown' ? '#11b0c8' : 'transparent'}
             color={active === 'unknown' ? '#fff' : '#000'}
             onPress={() => {
-              setActive('unknown');
-              router.setParams({ status: 'unknown' });
+              setActive((prevState) => (prevState === 'unknown' ? '' : 'unknown'));
+              router.setParams({ status: active === 'unknown' ? '' : 'unknown' });
             }}>
             Unknown
           </Button>
@@ -56,6 +56,7 @@ function FilterGroup() {
 
 export default function Filter({ placeholder }: Readonly<FilterProps>) {
   const [position, setPosition] = useState(0);
+  const [searchText, setSearchText] = useState('');
   const [open, setOpen] = useState(false);
 
   const snapPoints = [40, 50];
@@ -63,11 +64,13 @@ export default function Filter({ placeholder }: Readonly<FilterProps>) {
   return (
     <View flexDirection="row" alignItems="center" marginTop={10} marginBottom={30} gap={6}>
       <Input
+        value={searchText}
         size="$4"
         placeholder={placeholder}
         width="80%"
         onChangeText={(search) => {
           router.setParams({ q: search });
+          setSearchText(search);
         }}
       />
       <Button

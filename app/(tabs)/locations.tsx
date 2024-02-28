@@ -8,7 +8,7 @@ export default function TabCharactersScreen() {
 
   return (
     <Theme name="light">
-      <YStack top={top} left={left} right={right} flex={1} padding={10}>
+      <YStack top={top} left={left} right={right} flex={1} paddingHorizontal={10}>
         <Title text="Locations" color="#11b0c8" margin={0} />
         <ScrollView marginBottom={60}>
           <Input size="$4" placeholder="Search Location..." marginTop={10} marginBottom={30} />

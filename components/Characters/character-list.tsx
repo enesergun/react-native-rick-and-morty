@@ -6,7 +6,7 @@ import CharacterCard from './character-card';
 
 export default function CharacterList() {
   return (
-    <View flexDirection="row" flexWrap="wrap" gap={8}>
+    <View flexDirection="row" flexWrap="wrap" gap={8} marginBottom={60}>
       <Link href="/character/1" style={styles.linkStyle}>
         <CharacterCard />
       </Link>

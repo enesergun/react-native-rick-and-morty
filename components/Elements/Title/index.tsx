@@ -1,4 +1,4 @@
-import { Animated, Text, StyleSheet } from 'react-native';
+import { Animated, StyleSheet } from 'react-native';
 import { H2 } from 'tamagui';
 
 import { TitleProps } from '~/app/definitions';
